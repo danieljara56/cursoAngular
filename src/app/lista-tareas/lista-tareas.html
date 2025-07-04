@@ -1,0 +1,4 @@
+<h3>TAREAS</h3>
+<ng-container *ngFor="let ta1 of Tareas">
+    <p> {{ta1.id}} {{ta1.name}} <button (click)="eliminar(ta1.id)"> ELIMINAR </button></p>
+  </ng-container>

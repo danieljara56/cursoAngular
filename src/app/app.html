@@ -1,13 +1,7 @@
 <div class="presentacion">
-
   <h1>TODO LIST</h1>
-
   <br>
   <input type="text" [(ngModel)]="nuevo" />
   <button (click)="mostrar()"> INGRESAR </button>
-
-  <ng-container *ngFor="let ta of users">
-
-    <p> {{ta.id}} {{ta.name}} <button (click)="eliminar(ta.id)"> ELIMINAR </button></p>
-  </ng-container>
+  <app-lista-tareas [Tareas]='Tareas' (idTask)="eliminar($event)"></app-lista-tareas>
 </div>
