@@ -1,0 +1,26 @@
+<form [formGroup]="profileForm"  (ngSubmit)="handleSubmit()" #formReactivo = "ngForm">
+  <label>
+    Email
+    <input type="email" formControlName="email" [(ngModel)]="correo" />
+  </label>
+  <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+</form>
+<h2>Profile Form</h2>
+<p>Email: {{ profileForm.value.email }}</p>
+<div class="presentacion">
+    <h3> REGISTROS</h3>
+    <table *ngIf="correos.length > 0" border="1" style="width: auto;">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Correos</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let n of correos; let i = index">
+                <td>{{i+1}}</td>
+                <td>{{n}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
